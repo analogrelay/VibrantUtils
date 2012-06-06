@@ -5,6 +5,11 @@ namespace System.Collections.Generic
 {
     public static class EnumerableExtensions
     {
+        public static IEnumerable<T> NonNull<T>(this IEnumerable<T> self) where T : class
+        {
+            return self.Where(item => item != null);
+        }
+
         public static void Each<T>(this IEnumerable<T> self, Action<T> act)
         {
             foreach (T item in self)

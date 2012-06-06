@@ -5,6 +5,23 @@ namespace System.Collections.Generic
 {
     public static class EnumerableExtensions
     {
+        public static IEnumerable<T> Interleave<T>(this IEnumerable<T> self, Func<T> generator)
+        {
+            bool first = true;
+            foreach (var item in self)
+            {
+                if (first)
+                {
+                    first = false;
+                }
+                else
+                {
+                    yield return generator();
+                }
+                yield return item;
+            }
+        }
+        
         public static IEnumerable<T> NonNull<T>(this IEnumerable<T> self) where T : class
         {
             return self.Where(item => item != null);

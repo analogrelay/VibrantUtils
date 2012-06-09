@@ -2,19 +2,15 @@
 {
     public static class CollectionExtensions
     {
+        /// <summary>
+        /// Adds all the items in the specified list to the collection
+        /// </summary>
+        /// <typeparam name="T">The type of the items to add</typeparam>
+        /// <param name="self">The collection to add the items to</param>
+        /// <param name="items">The items to add</param>
         public static void AddRange<T>(this ICollection<T> self, IEnumerable<T> items)
         {
             items.Each(self.Add);
-        }
-
-        public static TElement GetOrCreate<TKey, TElement>(this IDictionary<TKey, TElement> self, TKey key, Func<TElement> creator)
-        {
-            TElement val;
-            if (!self.TryGetValue(key, out val))
-            {
-                self[key] = val = creator();
-            }
-            return val;
         }
     }
 }

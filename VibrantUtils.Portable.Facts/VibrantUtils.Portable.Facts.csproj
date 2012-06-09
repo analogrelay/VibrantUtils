@@ -47,11 +47,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CollectionExtensionsFacts.cs" />
+    <Compile Include="NotifyPropertyChangedBaseFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VibrantUtils.Portable\VibrantUtils.Portable.csproj">
+      <Project>{d1ac9904-c866-4afe-8664-86e06e871d3a}</Project>
+      <Name>VibrantUtils.Portable</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />

@@ -1,6 +1,6 @@
 ﻿namespace System.Runtime.CompilerServices
 {
-    public sealed class CallerMemberNameAttribute : Attribute
+    internal sealed class CallerMemberNameAttribute : Attribute
     {
     }
 }
